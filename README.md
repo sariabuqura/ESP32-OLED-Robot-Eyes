@@ -52,7 +52,7 @@ The display uses I2C. The ESP32's default I2C pins are used, so no pin configura
 
 On the breadboard photo, the **blue** and **white** wires carry the I2C signals (SDA/SCL) from the ESP32's bottom header (D21 and D22) to the display. Power (3V3) and GND complete the four connections.
 
-![Wiring on the breadboard](images/wiring-photo.jpg)
+![Wiring on the breadboard](ESP32-OLED-Robot-Eyes.jpg)
 
 ---
 
