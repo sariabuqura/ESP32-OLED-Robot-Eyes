@@ -4,8 +4,6 @@ An ESP32 drives a 1.3" SH1106 OLED display to show a cute animated face. The eye
 
 ![Final result on the breadboard](images/wiring-photo.jpg)
 
-> **Project #1** in my electronics and embedded projects collection.
-
 ---
 
 ## Features
@@ -106,28 +104,6 @@ curOffX += (tgtOffX - curOffX) * 0.3;
 
 To create an expression, set targets and call `glide(steps, frameDelay)`.
 
-### Random behaviour
-In `loop()`, a random number from 0 to 99 selects an expression. The ranges set how often each happens:
-
-| Roll | Expression |
-|------|------------|
-| 0-14 | blink |
-| 15-21 | double blink |
-| 22-29 | wink |
-| 30-35 | squint |
-| 36-41 | surprised |
-| 42-47 | sleepy |
-| 48-55 | look around |
-| 56-61 | shifty |
-| 62-67 | crazy dart |
-| 68-75 | angry |
-| 76-79 | furious |
-| 80-85 | sad |
-| 86-89 | love |
-| 90-93 | dizzy |
-| 94-96 | confused |
-| 97-99 | laugh |
-
 ---
 
 ## Customization
@@ -140,18 +116,6 @@ In `loop()`, a random number from 0 to 99 selects an expression. The ranges set 
 | How often an expression appears | The `if / else if` ranges in `loop()` |
 | Animation speed | `glide(steps, frameDelay)` values |
 | Trigger an expression yourself | Call it directly, e.g. `love();` |
-
-### Add your own expression
-```cpp
-void happy() {
-  tgtSquishL = tgtSquishR = 0.4;
-  tgtOffY = -2;
-  glide(8, 20);
-  delay(800);
-  neutral();
-}
-```
-Then add it to the chain in `loop()`.
 
 ---
 
@@ -179,15 +143,6 @@ To find the I2C address, upload any "I2C scanner" sketch and read the result in 
 └── images/
     └── wiring-photo.jpg
 ```
-
----
-
-## Ideas for Next Steps
-
-- Control expressions over Wi-Fi or Bluetooth from a phone
-- React to a button, touch sensor, or sound sensor
-- Show different moods based on a sensor (temperature, light, distance)
-- Add a buzzer for sound effects
 
 ---
 
