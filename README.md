@@ -81,7 +81,7 @@ Open **Sketch → Include Library → Manage Libraries** and install:
 - **Tools → Port →** your ESP32's COM/serial port
 
 ### 5. Upload
-1. Open `esp32_oled_eyes/esp32_oled_eyes.ino`.
+1. Open `ESP32-OLED-Robot-Eyes.ino`.
 2. Click **Upload**.
 3. If it shows `Connecting......`, hold the **BOOT** button on the ESP32 until upload starts.
 
@@ -94,15 +94,6 @@ Open **Sketch → Include Library → Manage Libraries** and install:
 - `drawEye()` draws each eye as a filled rounded rectangle. A `squish` value (0.08 to 1.25) changes its height, which gives blinking, squinting, and wide-eyed looks.
 - `drawHeart()` draws heart-shaped eyes from two circles and a triangle.
 - `drawAngryBrows()` draws slanted brow lines; `drawSadBrow()` cuts a black triangle from the top corner of each eye.
-
-### Animation
-Every property has a **current** value (`cur...`) and a **target** value (`tgt...`). The `glide()` function moves the current values a fraction of the way toward the targets each frame, so the motion is smooth instead of jumping.
-
-```cpp
-curOffX += (tgtOffX - curOffX) * 0.3;
-```
-
-To create an expression, set targets and call `glide(steps, frameDelay)`.
 
 ---
 
